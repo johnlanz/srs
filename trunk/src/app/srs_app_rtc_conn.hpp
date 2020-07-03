@@ -57,6 +57,9 @@ class SrsRtpNackForReceiver;
 class SrsRtpIncommingVideoFrame;
 class SrsRtpRingBuffer;
 class SrsRtcConsumer;
+#ifdef SRS_SCTP
+class SrsSctp;
+#endif
 
 const uint8_t kSR   = 200;
 const uint8_t kRR   = 201;
@@ -109,6 +112,9 @@ private:
     SrsRtcConnection* session_;
     SrsDtls* dtls_;
     SrsSRTP* srtp_;
+#ifdef SRS_SCTP
+    SrsSctp* sctp_;
+#endif
     bool handshake_done;
 public:
     SrsSecurityTransport(SrsRtcConnection* s);
