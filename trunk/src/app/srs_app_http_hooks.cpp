@@ -326,7 +326,7 @@ srs_error_t SrsHttpHooks::on_hls(std::string cid, string url, SrsRequest* req, s
     obj->set("app", SrsJsonAny::str(req->app.c_str()));
     obj->set("stream", SrsJsonAny::str(req->stream.c_str()));
     obj->set("param", SrsJsonAny::str(req->param.c_str()));
-    obj->set("duration", SrsJsonAny::number(srsu2ms(duration)/1000.0));
+    obj->set("duration", SrsJsonAny::number(duration));
     obj->set("cwd", SrsJsonAny::str(cwd.c_str()));
     obj->set("file", SrsJsonAny::str(file.c_str()));
     obj->set("url", SrsJsonAny::str(ts_url.c_str()));
