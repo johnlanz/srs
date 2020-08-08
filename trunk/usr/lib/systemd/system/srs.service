@@ -7,6 +7,7 @@ Type=forking
 ExecStart=/etc/init.d/srs start
 ExecReload=/etc/init.d/srs reload
 ExecStop=/etc/init.d/srs stop
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
