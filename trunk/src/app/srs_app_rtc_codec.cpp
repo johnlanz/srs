@@ -418,8 +418,8 @@ srs_error_t SrsAudioRecode::transcode(SrsSample *pkt, char **buf, int *buf_len, 
     if (!dec_) {
         return srs_error_new(ERROR_RTC_RTP_MUXER, "dec_ nullptr");
     }
-
-    int decode_len = kPacketBufMax;
+    
+    int decode_len = 0;
     char** decode_buffer = NULL;
     if ((err = dec_->decode(pkt, &decode_buffer, decode_len)) != srs_success) {
         return srs_error_wrap(err, "decode error");
